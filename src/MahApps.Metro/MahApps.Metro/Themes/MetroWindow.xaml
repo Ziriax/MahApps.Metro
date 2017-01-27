@@ -17,15 +17,15 @@
                 <Grid Background="{TemplateBinding Background}">
                     <Grid.ColumnDefinitions>
                         <!--  icon  -->
-                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="{TemplateBinding IconColumnWidth}" />
                         <!--  left window commands  -->
-                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="{TemplateBinding LeftCommandsColumnWidth}" />
                         <!--  title  -->
-                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="{TemplateBinding TitleColumnWidth}" />
                         <!--  right window commands  -->
-                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="{TemplateBinding RightCommandsColumnWidth}" />
                         <!--  min,max,close buttons  -->
-                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="{TemplateBinding WindowControlsColumnWidth}" />
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />

@@ -102,6 +102,12 @@ namespace MahApps.Metro.Controls
         public static readonly DependencyProperty WindowButtonCommandsOverlayBehaviorProperty = DependencyProperty.Register("WindowButtonCommandsOverlayBehavior", typeof(WindowCommandsOverlayBehavior), typeof(MetroWindow), new PropertyMetadata(WindowCommandsOverlayBehavior.Always));
         public static readonly DependencyProperty IconOverlayBehaviorProperty = DependencyProperty.Register("IconOverlayBehavior", typeof(WindowCommandsOverlayBehavior), typeof(MetroWindow), new PropertyMetadata(WindowCommandsOverlayBehavior.Never));
 
+        public static readonly DependencyProperty IconColumnWidthProperty = DependencyProperty.Register("IconColumnWidth", typeof(GridLength), typeof(MetroWindow), new PropertyMetadata(GridLength.Auto));
+        public static readonly DependencyProperty LeftCommandsColumnWidthProperty = DependencyProperty.Register("LeftCommandsColumnWidth", typeof(GridLength), typeof(MetroWindow), new PropertyMetadata(GridLength.Auto));
+        public static readonly DependencyProperty TitleColumnWidthProperty = DependencyProperty.Register("TitleColumnWidth", typeof(GridLength), typeof(MetroWindow), new PropertyMetadata(new GridLength(1, GridUnitType.Star)));
+        public static readonly DependencyProperty RightCommandsColumnWidthProperty = DependencyProperty.Register("RightCommandsColumnWidth", typeof(GridLength), typeof(MetroWindow), new PropertyMetadata(GridLength.Auto));
+        public static readonly DependencyProperty WindowControlsColumnWidthProperty = DependencyProperty.Register("WindowControlsColumnWidth", typeof(GridLength), typeof(MetroWindow), new PropertyMetadata(GridLength.Auto));
+
         [Obsolete(@"This property will be deleted in the next release. You should use LightMinButtonStyle or DarkMinButtonStyle in WindowButtonCommands to override the style.")]
         public static readonly DependencyProperty WindowMinButtonStyleProperty = DependencyProperty.Register("WindowMinButtonStyle", typeof(Style), typeof(MetroWindow), new PropertyMetadata(null, OnWindowButtonStyleChanged));
         [Obsolete(@"This property will be deleted in the next release. You should use LightMaxButtonStyle or DarkMaxButtonStyle in WindowButtonCommands to override the style.")]
@@ -701,6 +707,36 @@ namespace MahApps.Metro.Controls
         public string WindowTitle
         {
             get { return TitleCaps ? Title.ToUpper() : Title; }
+        }
+
+        public GridLength IconColumnWidth
+        {
+            get { return (GridLength)GetValue(IconColumnWidthProperty); }
+            set { SetValue(IconColumnWidthProperty, value); }
+        }
+
+        public GridLength TitleColumnWidth
+        {
+            get { return (GridLength)GetValue(TitleColumnWidthProperty); }
+            set { SetValue(TitleColumnWidthProperty, value); }
+        }
+
+        public GridLength LeftCommandsColumnWidth
+        {
+            get { return (GridLength)GetValue(LeftCommandsColumnWidthProperty); }
+            set { SetValue(LeftCommandsColumnWidthProperty, value); }
+        }
+
+        public GridLength RightCommandsColumnWidth
+        {
+            get { return (GridLength)GetValue(RightCommandsColumnWidthProperty); }
+            set { SetValue(RightCommandsColumnWidthProperty, value); }
+        }
+
+        public GridLength WindowControlsColumnWidth
+        {
+            get { return (GridLength)GetValue(WindowControlsColumnWidthProperty); }
+            set { SetValue(WindowControlsColumnWidthProperty, value); }
         }
 
         /// <summary>
